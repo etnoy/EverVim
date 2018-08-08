@@ -20,6 +20,12 @@
     source $evervim_root/core/functions.vim
 " }
 
+" Use config if available {
+    if filereadable(expand("~/.EverVim.vimrc"))
+        source ~/.EverVim.vimrc
+    endif
+" }
+
 " Use bundles config {
     if filereadable(expand($evervim_root . "/plugins/plugins.vim"))
         source $evervim_root/plugins/plugins.vim
@@ -53,9 +59,8 @@
 " GUI Config {
     source $evervim_root/core/gui.vim
 " }
-
 " Use config if available {
-    if filereadable(expand("~/.EverVim.vimrc"))
-        source ~/.EverVim.vimrc
+    if filereadable(expand("~/.vimrc.after"))
+        source ~/.vimrc.after
     endif
 " }
